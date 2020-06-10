@@ -19,22 +19,23 @@ export default function Details(props) {
   // TASK 8 - Use an effect to fetch the details of the current friend.
   // The URL should end up looking like `http://localhost:4000/friends/1?api_key=xyz`
   // On success, shove the details of the friend in `details` slice of state
-
-  if (!details) {
-    return null
-  }
-
+  
   return (
     <div className='container'>
       <h2>Details:</h2>
-      <p>{details.name} is {details.age}</p>
-      <p>email is {details.email}</p>
-      {name} likes:
-      <ul>
-        {
-          details.likes.map((like, idx) => <li key={idx}>{like}</li>)
-        }
-      </ul>
+      {
+        details &&
+        <>
+          <p>{details.name} is {details.age}</p>
+          <p>email is {details.email}</p>
+          {name} likes:
+          <ul>
+            {
+              details.hobbies.map((like, idx) => <li key={idx}>{like}</li>)
+            }
+          </ul>
+        </>
+      }
       <button onClick={close}>Close</button>
     </div>
   )
