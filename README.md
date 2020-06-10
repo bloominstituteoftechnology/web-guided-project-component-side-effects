@@ -1,6 +1,6 @@
 # Side Effects
 
-## Running this project
+## About the setup
 
 This project is set up with [Parcel Bundler](https://parceljs.org/), an npm package
 that compiles our frontend assets and comes with an integrated development server.
@@ -11,6 +11,8 @@ being used by another application.
 The API runs on port `4000`, and will not work if this port is being used
 by another process. You can easily kill a process hogging the port using [fkill-cli](https://github.com/sindresorhus/fkill-cli),
 all you have to do is run the command `fkill :4000`
+
+## Running this project
 
 - Clone the repo.
 - Navigate into the project folder.
