@@ -15,12 +15,12 @@ app.use((req, res, next) => {
 })
 
 const friends = [
-  { id: '1', name: 'Amber', email: 'amber@amber.com', age: 32, hobbies: ['hiking', 'science fiction', 'sightseeing'] },
-  { id: '2', name: 'Ana Rosa', email: 'anarosa@anarosa.com', age: 28, hobbies: ['fishing', 'cooking', 'death metal'] },
-  { id: '3', name: 'Charlie', email: 'charlie@charlie.com', age: 25, hobbies: ['hiking', 'netflix', 'fishing'] },
-  { id: '4', name: 'Deborah', email: 'deborah@deborah.com', age: 22, hobbies: ['heavy metal', 'netflix', 'death metal'] },
-  { id: '5', name: 'Dominique', email: 'dominique@dominique.com', age: 35, hobbies: ['reading', 'amazon', 'bird watching'] },
-  { id: '6', name: 'Khwanchai', email: 'khwanchai@khwanchai.com', age: 24, hobbies: ['hiking', 'heavy metal', 'heavy rock'] },
+  { id: '1', name: 'Bea', email: 'bea@bea.com', age: 32, hobbies: ['coding', 'science fiction', 'sightseeing'] },
+  { id: '2', name: 'Bikesh', email: 'bikesh@bikesh.com', age: 28, hobbies: ['fishing', 'coding', 'death metal'] },
+  { id: '3', name: 'Cora', email: 'cora@cora.com', age: 25, hobbies: ['hiking', 'netflix', 'coding'] },
+  { id: '4', name: 'Deborah', email: 'deborah@deborah.com', age: 22, hobbies: ['heavy metal', 'coding', 'death metal'] },
+  { id: '5', name: 'Devin', email: 'devin@devin.com', age: 35, hobbies: ['reading', 'coding', 'bird watching'] },
+  { id: '6', name: 'Micherre', email: 'micherre@micherre.com', age: 24, hobbies: ['hiking', 'heavy metal', 'coding'] },
 ]
 
 app.get('/friends/:id', (req, res) => {
