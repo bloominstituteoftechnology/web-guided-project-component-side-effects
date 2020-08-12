@@ -30,7 +30,7 @@ export default function Details(props) {
           {name} likes:
           <ul>
             {
-              details.hobbies.map((like, idx) => <li key={idx}>{like}</li>)
+              details.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)
             }
           </ul>
         </>
