@@ -21,7 +21,7 @@ export default function Details(props) {
 
   return (
     <div className='container'>
-      <h2>Details:</h2>
+      <h2>Details (of friend with id {friendId}):</h2>
       {
         details &&
         <>

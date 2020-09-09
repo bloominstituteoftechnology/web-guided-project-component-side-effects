@@ -33,7 +33,7 @@ export default function App() {
 
   return (
     <div className='container'>
-      <h1>My friends:</h1>
+      <h1>Some of my friends:</h1>
       {
         // If the initial value of `friends` state weren't an empty array,
         // this would crash due to invoking `map` method on non-array.
