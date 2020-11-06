@@ -6,15 +6,15 @@ export default function Details(props) {
   const { friendId, close } = props
   const [details, setDetails] = useState(null)
 
-  // TASK 4 - Create a side effect 🥇 that runs only after first render.
+  // 👉 TASK 4 - Create a side effect 🥇 that runs only after first render.
 
-  // TASK 5 - Create a side effect 👻 that runs only after first render
+  // 👉 TASK 5 - Create a side effect 👻 that runs only after first render
   // and puts a 'click' event handler on document.
   // See what happens if we don't clean up.
 
-  // TASK 6 - Create a side effect 🥵 that runs after every render.
+  // 👉 TASK 6 - Create a side effect 🥵 that runs after every render.
 
-  // TASK 7 - Create a side effect 📲 that runs when a particular variable changes:
+  // 👉 TASK 7 - Create a side effect 📲 that runs when a particular variable changes:
   // Whenever props.friendId updates we should trigger a fetch for details of the friend.
   // The URL should end up looking like `http://localhost:4000/friends/1?api_key=xyz`
   // On success, shove the details of the friend in `details` slice of state
@@ -29,9 +29,7 @@ export default function Details(props) {
           <p>email is {details.email}</p>
           {name} likes:
           <ul>
-            {
-              details.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)
-            }
+            {details.hobbies.map((hobby) => <li key={hobby}>{hobby}</li>)}
           </ul>
         </>
       }
