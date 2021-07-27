@@ -33,6 +33,8 @@ app.get('/friends/:id', (req, res) => {
   }
 })
 
+app.get('/', (req, res) => res.json({ message: 'hello world!' }))
+
 app.get('/friends', (req, res) => {
   res.json(friends.map(fr => ({ id: fr.id, name: fr.name })))
 })
