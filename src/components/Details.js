@@ -6,7 +6,8 @@ export default function Details(props) {
   const { friendId, close } = props; // -> props is an object
   // const friendId = props.friendId
   const [details, setDetails] = useState(null) //-> useState returns an array
- 
+
+
   // 👉 TASK 4 - Create a side effect 🥇 that runs only after first render.
   useEffect(() => {
     console.log('Effect after component first mounts!!');
