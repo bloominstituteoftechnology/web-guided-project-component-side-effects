@@ -3,10 +3,10 @@ import { BASE_URL, API_KEY } from '../constants'
 import axios from 'axios'
 
 export default function Details(props) {
-  const { friendId, close } = props
+  const { friendId, close } = props; // -> props is an object
   // const friendId = props.friendId
-  const [details, setDetails] = useState(null)
-
+  const [details, setDetails] = useState(null) //-> useState returns an array
+ 
   // 👉 TASK 4 - Create a side effect 🥇 that runs only after first render.
   useEffect(() => {
     console.log('Effect after component first mounts!!');
@@ -39,7 +39,7 @@ export default function Details(props) {
   useEffect(() => {
     axios.get(`${BASE_URL}/friends/${friendId}?api_key=${API_KEY}`)
       .then(res => {
-        console.log(res);
+        setDetails(res.data);
       })
   }, [friendId])
 
