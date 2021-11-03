@@ -34,14 +34,7 @@ export default function App() {
   return (
     <div className='container'>
       <h1>Some of my friends:</h1>
-      {
-        // If the initial value of `friends` state weren't an empty array,
-        // this would crash due to invoking `map` method on non-array.
-        // We'd need a guard against this.
-        friends.map(fr => {
-          return <Friend key={fr.id} info={fr} />
-        })
-      }
+      {// start by mapping over the friends array...}
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
