@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 // 👉 TASK 2 - import the contants from constants/index.js
 
 import Details from './Details'
+import Friend from './Friend';
 
 export default function App() {
   const [friends, setFriends] = useState([])
@@ -22,19 +23,10 @@ export default function App() {
   // The effect should consist of a call to the API using axios.
   // On success, set the array of friend objects from the API into state.
 
-  const Friend = props => (
-    <div className='friend'>
-      {props.info.name}
-      <button onClick={() => openDetails(props.info.id)}>
-        See details
-      </button>
-    </div>
-  )
-
   return (
     <div className='container'>
       <h1>Some of my friends:</h1>
-      {// start by mapping over the friends array...}
+      {/* start by mapping over the friends array...*/}
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
