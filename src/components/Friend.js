@@ -1,6 +1,7 @@
 import React from 'react';
 
 const Friend = props => {
+    const { openDetails } = props
     return (
         <div className='friend'>
             {props.info.name}
@@ -8,7 +9,7 @@ const Friend = props => {
                 See details
             </button>
         </div>
-  )
+    )
 }
 
 export default Friend;
