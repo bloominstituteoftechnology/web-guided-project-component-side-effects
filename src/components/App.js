@@ -19,12 +19,8 @@ export default function App() {
   const closeDetails = () => {
     setCurrentFriendId(null)
   }
-
-  // 👉 TASK 3 - make an effect that runs after FIRST DOM surgery
-  // caused by the first render only. You'll need `useEffect` from React.
-  // The effect should consist of a call to the API using axios.
-  // On success, set the array of friend objects from the API into state.
-  useEffect(() => {
+  // .then .catch promise
+  const getFriends = () => {
     axios.get(`${url}/friends?api_key=${apikey}`)
     .then(res => {
       console.log(res)
@@ -33,6 +29,25 @@ export default function App() {
     .catch(err => {
       console.log(`error: ${err}`)
     })
+  }
+  // async / await promise
+  // const getFriendsAA= async () => {
+  //   try {
+  //     const res = await axios.get(`${url}/friends?api_key=${apikey}`)
+  //     setFriends(res.data)
+  //   } catch (err) {
+  //     debugger
+  //     console.log(err)
+  //   }
+  // }
+
+  // 👉 TASK 3 - make an effect that runs after FIRST DOM surgery
+  // caused by the first render only. You'll need `useEffect` from React.
+  // The effect should consist of a call to the API using axios.
+  // On success, set the array of friend objects from the API into state.
+  useEffect(() => {
+    getFriends()
+    //  return / aka clean up not necessary with api calls in useEffect.  Cleanup is primarily needed when the side effect is 'dirty' like an event listener.
   },[])
 
   return (
