@@ -37,7 +37,7 @@ export default function App() {
       {/* start by mapping over the friends array...*/}
       { apiError && <h2 className="error">{apiError}</h2>}
       { friends.length > 0 
-          ? friends.map(fr => <Friend info={fr} key={fr.id} /> )
+          ? friends.map(fr => <Friend info={fr} key={fr.id} openDetails={openDetails} /> )
           : <p>DATA COMING SOON I PROMMMMISE!!!</p>
       }
       {
