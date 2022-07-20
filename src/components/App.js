@@ -10,6 +10,7 @@ import Friend from './Friend';
 export default function App() {
   const [friends, setFriends] = useState([])
   const [currentFriendId, setCurrentFriendId] = useState(null)
+  const [apiError, setApiError] = useState(null);
 
   const openDetails = id => {
     setCurrentFriendId(id)
@@ -27,14 +28,18 @@ export default function App() {
     axios.get(`${BASE_URL}/friends?api_key=${API_KEY}`)
       .then(res => {
         setFriends(res.data);
-      }).catch(err => console.error(err))
+      }).catch(err => setApiError("OH NO PLEASE COME BACK SOON SORRRRRRY!"))
   }, [])
 
   return (
     <div className='container'>
       <h1>Some of my friends:</h1>
       {/* start by mapping over the friends array...*/}
-      { friends.length > 0 ? <p>RENDER THE FRIENDS!!</p> : <p>DATA COMING SOON I PROMMMMISE!!!</p>}
+      { apiError && <h2 className="error">{apiError}</h2>}
+      { friends.length > 0 
+          ? friends.map(fr => <Friend info={fr} key={fr.id} /> )
+          : <p>DATA COMING SOON I PROMMMMISE!!!</p>
+      }
       {
         currentFriendId && <Details friendId={currentFriendId} close={closeDetails} />
       }
